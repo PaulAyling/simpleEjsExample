@@ -31,5 +31,11 @@ app.get('/ejs/dynamicAddedVariables/:userQuery', (req, res) => {
 		data: { userQuery: req.params.userQuery, searchResults: ['book1', 'book2', 'book3'] },
 	});
 });
+//EJS CODE: dynamic with extra variables in a loop
+app.get('/ejs/dynamicAddedVariablesloop/:userQuery', (req, res) => {
+	res.render('dynamicAddedVariables', {
+		data: { userQuery: req.params.userQuery, searchResults: ['book1', 'book2', 'book3'] },
+	});
+});
 
 app.listen(process.env.PORT || 5000);

@@ -11,12 +11,13 @@
 
   <p>You search for: <%= data.userQuery %></p>
   <h2>
-    NOw with added variables!
+    NOw with added variables in a loop!
   </h2>
   <ul>
-    <li><%= data.searchResults[0] %></li>
-    <li><%= data.searchResults[1] %></li>
-    <li><%= data.searchResults[2] %></li>
+<%= data.searchResults.forEach(item) =>{
+  data.searchResults[item]
+}
+%>
   </ul>
 </p>
 </body>
