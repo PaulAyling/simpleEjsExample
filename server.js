@@ -33,8 +33,13 @@ app.get('/ejs/dynamicAddedVariables/:userQuery', (req, res) => {
 });
 //EJS CODE: dynamic with extra variables in a loop
 app.get('/ejs/dynamicAddedVariablesloop/:userQuery', (req, res) => {
-	res.render('dynamicAddedVariables', {
-		data: { userQuery: req.params.userQuery, searchResults: ['book1', 'book2', 'book3'] },
+	res.render('dynamicAddedVariablesLoop', {
+		data: {
+			userQuery: req.params.userQuery,
+			searchResults: ['book1', 'book2', 'book4'],
+			loggedIn: true,
+			userName: 'paul',
+		},
 	});
 });
 

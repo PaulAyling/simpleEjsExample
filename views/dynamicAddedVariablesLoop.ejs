@@ -6,18 +6,21 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Dynamic Ejs</h1>
+  <h1>Dynamic Ejs__</h1>
 <p>This page features data sent in to the file using variables
 
   <p>You search for: <%= data.userQuery %></p>
   <h2>
     NOw with added variables in a loop!
   </h2>
+  <% if(data.loggedIn) { %>
+    <h2>You are logged in as: <%= data.userName %></h2>
+  <% } %>
   <ul>
-<%= data.searchResults.forEach(item) =>{
-  data.searchResults[item]
-}
-%>
+<% data.searchResults.forEach(item =>{ %>
+  <li><%= item %> </li>
+<%})%>
+
   </ul>
 </p>
 </body>
