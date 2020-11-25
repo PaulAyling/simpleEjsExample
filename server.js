@@ -1,4 +1,5 @@
 const express = require('express');
+const { request } = require('http');
 var path = require('path');
 const app = express();
 
@@ -14,10 +15,15 @@ app.get('/about', function (req, res) {
 	res.sendFile('about.html', { root: path.join(__dirname, './staticHtml') });
 });
 
-//EJS CODE (it know that templates are in /views)
+//EJS CODE: Static
+//(it know that templates are in /views)
 app.set('view engine', 'ejs');
-app.get('/ejs', function (req, res) {
-	res.render('index');
+app.get('/ejs/static', function (req, res) {
+	res.render('static');
+});
+//EJS CODE: dynamic
+app.get('/ejs/:userQuery', (req, res) => {
+	res.render('dynamic', { data: { userQuery: req.params.userQuery } });
 });
 
 app.listen(process.env.PORT || 5000);
