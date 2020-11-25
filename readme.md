@@ -1,3 +1,6 @@
+Tutorial taken from https://www.youtube.com/watch?v=VM-2xSaDxJc
+
+
 echo "# simpleEjsExample" >> README.md
 git init
 git add .
